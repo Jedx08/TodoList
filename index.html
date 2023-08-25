@@ -6,6 +6,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
   <title>Todo List</title>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .todo-status-completed {
+        opacity: 0.5;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="h-screen bg-cyan-400">

@@ -11,7 +11,7 @@ function todoHTML(filtered) {
 
   filtered.forEach(listItem => {
     listHTML += `
-    <div class="todo-id-${listItem.todoId}" data-todo-status="${filtered}">
+    <div class="todo-id-${listItem.todoId} todo-status-${listItem.status}" data-todo-status="${filtered}">
       <div class="m-auto mt-1 relative top-1/3 list-none w-80 bg-white p-2 text-lg flex justify-between ">
         <li class="js-list">${listItem.todo}</li>
         <div>
@@ -110,6 +110,7 @@ function todoPush() {
   input.value = '';
   saveToStorage();
   filteredStatus();
+  markDone();
 }
 
 function removeTodo(todoId) {
@@ -129,9 +130,8 @@ function removeTodo(todoId) {
   .forEach((button) => {
     button.addEventListener('click', () => {
       todoId = Number(button.dataset.todoId);
-      removeTodo(todoId)
-      const container = document.querySelector(`.todo-id-${todoId}`);
-      container.remove();
+      removeTodo(todoId);
+      filteredStatus();
     });
   });
 }
