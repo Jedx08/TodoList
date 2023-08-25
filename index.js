@@ -44,7 +44,6 @@ input.addEventListener('keydown', () => {
     todoPush();
     deleteTodo();
     markDone()
-    console.log(todoList);
   }
 });
 
@@ -72,16 +71,19 @@ function filteredStatus() {
     case 'All':
       todoHTML(todoList);
       markDone();
+      deleteTodo();
       break
     case 'completed':
       filtering('completed');
       todoHTML(filtered);
       markDone();
+      deleteTodo();
       break
     case 'uncompleted':
       filtering('uncompleted');
       todoHTML(filtered);
       markDone();
+      deleteTodo();
       break
   }
 }
@@ -181,6 +183,3 @@ function filtering(status) {
 
   return filtered = filter;
 }
-
-
-console.log(todoList);
