@@ -49,12 +49,10 @@ input.addEventListener('keydown', () => {
   }
 });
 
-
 addTodo();
 deleteTodo();
 markDone();
 deletingAllCondition();
-
 
 // functions
 
@@ -145,7 +143,6 @@ function randomId() {
 
   return random2;
 }
-
 
 function markDone() {
   document.querySelectorAll('.js-done')
