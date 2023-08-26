@@ -35,6 +35,7 @@ function addTodo() {
     todoPush();
     deleteTodo();
     markDone();
+    deletingAll();
   });
 }
 
@@ -43,7 +44,8 @@ input.addEventListener('keydown', () => {
   if ( event.key === "Enter") {
     todoPush();
     deleteTodo();
-    markDone()
+    markDone();
+    deletingAll();
   }
 });
 
@@ -51,6 +53,7 @@ input.addEventListener('keydown', () => {
 addTodo();
 deleteTodo();
 markDone();
+deletingAllCondition();
 
 
 // functions
@@ -182,4 +185,32 @@ function filtering(status) {
   });
 
   return filtered = filter;
+}
+
+function deletingAll() {
+
+  const deleteAllButton = document.querySelector('.js-delete-all-container');
+
+  deleteAllButton.innerHTML = `<button class="js-delete-all p-2 hover:bg-red-700 hover:text-white transition duration-150 text-white font-medium">Delete All</button>`;
+
+  document.querySelector('.js-delete-all')
+    .addEventListener('click', () => {
+      deleteAll();
+
+      deleteAllButton.innerHTML = '';
+    })
+
+  saveToStorage();
+}
+
+function deleteAll() {
+  todoList = [];
+  filteredStatus();
+  saveToStorage();
+}
+
+function deletingAllCondition() {
+  if (todoList.length !== 0) {
+    deletingAll();
+  }
 }
