@@ -58,7 +58,6 @@ deletingAllCondition();
 // functions
 
 function statusFilter() {
-  filteredStatus();
   document.querySelector('.js-status')
   .addEventListener('click', () => {
     filteredStatus();
@@ -75,18 +74,21 @@ function filteredStatus() {
       todoHTML(todoList);
       markDone();
       deleteTodo();
+      deletingAllCondition();
       break
     case 'completed':
       filtering('completed');
       todoHTML(filtered);
       markDone();
       deleteTodo();
+      document.querySelector('.js-delete-all-container').innerHTML = '';
       break
     case 'uncompleted':
       filtering('uncompleted');
       todoHTML(filtered);
       markDone();
       deleteTodo();
+      document.querySelector('.js-delete-all-container').innerHTML = '';
       break
   }
 }
@@ -217,3 +219,5 @@ function deletingAllCondition() {
     document.querySelector('.js-delete-all-container').innerHTML = '';
   }
 }
+
+filteredStatus();
