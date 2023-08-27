@@ -4,6 +4,7 @@ function saveToStorage() {
   localStorage.setItem('todoList', JSON.stringify(todoList));
 }
 
+filteredStatus();
 statusFilter();
 
 function todoHTML(filtered) {
