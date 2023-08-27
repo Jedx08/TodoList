@@ -35,7 +35,7 @@ function addTodo() {
     todoPush();
     deleteTodo();
     markDone();
-    deletingAll();
+    deletingAllCondition();
   });
 }
 
@@ -45,7 +45,7 @@ input.addEventListener('keydown', () => {
     todoPush();
     deleteTodo();
     markDone();
-    deletingAll();
+    deletingAllCondition();
   }
 });
 
@@ -99,8 +99,9 @@ function todoPush() {
   inputValue();
 
   if ( inputValue() === '') {
-    alert('please input something');
+    document.querySelector('.js-input-empty').innerHTML = 'please input something';
   } else {
+    document.querySelector('.js-input-empty').innerHTML = '';
     todoList.push({
       todoId: randomId(),
       status: 'uncompleted',
@@ -133,6 +134,7 @@ function removeTodo(todoId) {
       todoId = Number(button.dataset.todoId);
       removeTodo(todoId);
       filteredStatus();
+      deletingAllCondition();
     });
   });
 }
@@ -188,7 +190,7 @@ function deletingAll() {
 
   const deleteAllButton = document.querySelector('.js-delete-all-container');
 
-  deleteAllButton.innerHTML = `<button class="js-delete-all p-2 hover:bg-red-700 hover:text-white transition duration-150 text-white font-medium">Delete All</button>`;
+  deleteAllButton.innerHTML = `<button class="js-delete-all p-2 bg-red-700 transition duration-150 text-white font-medium">Delete All</button>`;
 
   document.querySelector('.js-delete-all')
     .addEventListener('click', () => {
@@ -209,5 +211,7 @@ function deleteAll() {
 function deletingAllCondition() {
   if (todoList.length !== 0) {
     deletingAll();
+  } else {
+    document.querySelector('.js-delete-all-container').innerHTML = '';
   }
 }
