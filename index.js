@@ -58,6 +58,7 @@ deletingAllCondition();
 // functions
 
 function statusFilter() {
+  filteredStatus();
   document.querySelector('.js-status')
   .addEventListener('click', () => {
     filteredStatus();
