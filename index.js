@@ -75,7 +75,6 @@ function filteredStatus() {
       markDone();
       deleteTodo();
       deletingAllCondition();
-      todoHTML(todoList);
       break
     case 'completed':
       filtering('completed');
@@ -83,7 +82,6 @@ function filteredStatus() {
       markDone();
       deleteTodo();
       document.querySelector('.js-delete-all-container').innerHTML = '';
-      todoHTML(filtered);
       break
     case 'uncompleted':
       filtering('uncompleted');
@@ -91,7 +89,6 @@ function filteredStatus() {
       markDone();
       deleteTodo();
       document.querySelector('.js-delete-all-container').innerHTML = '';
-      todoHTML(filtered);
       break
   }
 }
