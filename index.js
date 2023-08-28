@@ -59,7 +59,7 @@ deletingAllCondition();
 
 function statusFilter() {
   document.querySelector('.js-status')
-  .onclick = () => {
+  .onchange = () => {
     filteredStatus();
   }
 
