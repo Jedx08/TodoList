@@ -59,9 +59,9 @@ deletingAllCondition();
 
 function statusFilter() {
   document.querySelector('.js-status')
-  .addEventListener('click', () => {
+  .onclick = () => {
     filteredStatus();
-  });
+  }
 
   todoHTML(todoList);
 }
