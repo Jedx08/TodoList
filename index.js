@@ -13,11 +13,11 @@ function todoHTML(filtered) {
   filtered.forEach(listItem => {
     listHTML += `
     <div class="transition duration-200 todo-id-${listItem.todoId} todo-status-${listItem.status}" data-todo-status="${filtered}">
-      <div class="m-auto mt-1 relative top-1/3 list-none w-80 bg-white p-2 text-lg flex justify-between ">
-        <li class="js-list">${listItem.todo}</li>
-        <div >
-          <button class="hover:bg-green-500 hover:text-white text-black transition duration-200 w-7 rounded-3xl js-done todo-item-status-${listItem.status}" data-todo-id="${listItem.todoId}"><i class="fa-solid fa-check"></i></button>
-          <button class="w-7 hover:text-red-500 transition duration-200 active:duration-200 js-delete" data-todo-id="${listItem.todoId}"><i class="fa-solid fa-trash"></i></button>
+      <div class="m-auto mt-1 relative top-1/3 list-none w-80 bg-white p-2 text-lg flex justify-between output-section">
+        <h1 class="js-list">${listItem.todo}</h1>
+        <div>
+          <button class="bg-green-500 text-white transition duration-200 w-7 rounded-3xl js-done" data-todo-id="${listItem.todoId}"><i class="fa-solid fa-check"></i></button>
+          <button class="w-7 text-red-500 transition duration-200 active:duration-200 js-delete" data-todo-id="${listItem.todoId}"><i class="fa-solid fa-trash"></i></button>
         </div>
       </div>
     </div>

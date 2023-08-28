@@ -16,6 +16,10 @@
         opacity: 0.5;
       }
 
+      .todo-status-completed div h1 {
+        text-decoration: line-through;
+      }
+
       .todo-item-status-completed {
         opacity: 1;
         background-color: green;
@@ -38,7 +42,24 @@
 
     @media (max-width: 500px) {
       .media {
-        width: 180px;
+        width: max-content;
+      }
+    }
+
+    @media (max-width: 439px) {
+      .input-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input-section-2 {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 439px) {
+      .output-section {
+        width: fit-content;
       }
     }
   </style>
@@ -50,14 +71,16 @@
 <div class="h-screen bg-red-400 border-2 border-red-400">
   <div class="relative mt-60 text-center text-3xl font-bold text-white">To-do List</div>
   <div class="text-center relative mt-10 ">
-    <div class="flex justify-center"> 
-      <input type="text" class=" media focus:border-0 focus:ring-0 border-0 o
-      utline-0 active:border-0 active:outline-none js-input w-50">
-      <button class="p-2 bg-green-500 transition duration-150 w-9 js-add-button">
-        <i class="fa-solid fa-plus text-white"></i>
-      </button>
+    <div class="flex justify-center input-section"> 
+      <div class="flex justify-center">
+        <input type="text" class=" media focus:border-0 focus:ring-0 border-0 o
+        utline-0 active:border-0 active:outline-none js-input w-50">
+        <button class="p-2 bg-green-500 transition duration-150 w-9 js-add-button">
+          <i class="fa-solid fa-plus text-white"></i>
+        </button>
+      </div>
       
-      <div class="ml-5">
+      <div class="ml-5 input-section-2">
         <label for="done" class="hover:bg-red-400"></label>
         <select name="done" id="done" class="js-status border-0 focus:ring-0 focus:border-0 hover: cursor-pointer text-center">
           <option value="All" class="focus:ring-0 focus:border-0">All</option>
